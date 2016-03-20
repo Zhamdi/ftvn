@@ -158,7 +158,7 @@ class ArticleController extends FOSRestController
     {
         $entityManager = $this->getDoctrine()->getManager();
         $article = $entityManager->getRepository('AppBundle:Article')->find($id);
-        if (false === $article) {
+        if (!$article) {
             throw $this->createNotFoundException('Article does not exist.');
         }
 
