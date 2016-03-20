@@ -1,0 +1,18 @@
+{% extends "AppBundle::layout.html.twig" %}
+
+{% block title "Symfony - Article" %}
+
+{% block content_header '' %}
+
+{% block content %}
+    <h1 class="title">Article #{{ id }}</h1>
+
+    <p>{{ article }}</p>
+    <p>
+        <a href="{{ path('get_articles') }}">{{ 'article.list.link'|trans({}, 'AppBundle') }}</a> <br>
+        [<a href="{{ path('remove_articles', {'id': id}) }}">{{ 'article.remove.link'|trans({}, 'AppBundle') }}</a>]
+        [<a href="{{ path('edit_articles', {'id': id}) }}">{{ 'article.edit.link'|trans({}, 'AppBundle') }}</a>]
+    </p>
+{% endblock %}
+
+{% set code = code(_self) %}

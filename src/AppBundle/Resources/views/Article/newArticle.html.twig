@@ -1,0 +1,22 @@
+{% extends "AppBundle::layout.html.twig" %}
+
+{% block title "Symfony - Articles" %}
+
+{% block content_header '' %}
+
+{% block content %}
+    <h1 class="title">{{ 'article.new.headline'|trans({}, 'AppBundle') }}</h1>
+
+    {%  if (form is defined) %}
+    <form action="{{ url('post_articles') }}" method="POST" {{ form_enctype(form) }}>
+
+        {{ form_widget(form) }}
+
+        <input type="submit" value="{% trans from 'AppBundle' %}article.new.submit{% endtrans %}">
+    </form>
+        <a href="{{ path('get_articles') }}"><button>{{ 'article.list.link'|trans({}, 'AppBundle') }}</button></a>
+    {% endif %}
+
+{% endblock %}
+
+{% set code = code(_self) %}

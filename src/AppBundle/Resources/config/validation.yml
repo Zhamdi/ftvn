@@ -1,0 +1,6 @@
+AppBundle\Entity\Article:
+    properties:
+        title:
+            - NotBlank: ~
+        createdBy:
+            - NotBlank: ~

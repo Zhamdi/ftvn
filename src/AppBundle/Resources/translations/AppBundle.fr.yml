@@ -1,0 +1,20 @@
+article:
+  list:
+    link: Retour à la liste
+    headline: Liste des articles
+    empty: Aucun article trouvé
+  new:
+    link: Ajouter un article
+    headline: Créer un article
+    submit: Soumettre
+  edit:
+    link: edit
+    headline: Modifier l'article %title%
+    submit: mettre à jour article
+  remove:
+    link: supprimer
+  offset: offset
+  limit: limit
+api:
+  doc:
+    link: API documentation

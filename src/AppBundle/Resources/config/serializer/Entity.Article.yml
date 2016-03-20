@@ -1,0 +1,23 @@
+AppBundle\Entity\Article:
+  exclusion_policy: ALL
+  properties:
+    id:
+      expose: true
+    title:
+      expose: true
+    leadin:
+      expose: true
+    body:
+      expose: true
+    createdBy:
+      expose: true
+    createdAt:
+      expose: true
+  relations:
+    -
+      rel: self
+      href:
+        route: get_article
+        parameters:
+          id: expr(object.getId())
+        absolute: true

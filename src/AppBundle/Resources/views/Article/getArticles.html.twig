@@ -1,0 +1,25 @@
+{% extends "AppBundle::layout.html.twig" %}
+
+{% block title "Symfony - Articles" %}
+
+{% block content_header '' %}
+
+{% block content %}
+    <h1 class="title">{{ 'article.list.headline'|trans({}, 'AppBundle') }}</h1>
+
+    <p>
+        <a href="{{ path('new_article') }}">{{ 'article.new.link'|trans({}, 'AppBundle') }}</a>
+    </p>
+
+    <ol id="article-list">
+        {% for article in articles %}
+        <li>
+            <p>{{ article.title }} [ par {{ article.createdBy }} Le {{ article.createdAt|date("d/m/Y") }}]</p>
+            <br>
+            <p>{{ article.body }}</p>
+        </li>
+        {% else %}
+        <li>{{ 'article.list.empty'|trans({}, 'AppBundle') }}</li>
+        {% endfor %}
+    </ol>
+{% endblock %}
